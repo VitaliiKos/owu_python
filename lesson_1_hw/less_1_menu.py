@@ -3,14 +3,14 @@
 list_task = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
 
 
-def menu_1():
+def menu_option_1():
     print('------------------------------------------------')
     print(list_task)
     print('List Task-1:', min(list_task))
     print('------------------------------------------------')
 
 
-def menu_2():
+def menu_option_2():
     result_list_menu = []
     for i in list_task:
         if i not in result_list_menu:
@@ -21,7 +21,7 @@ def menu_2():
     print('------------------------------------------------')
 
 
-def menu_3():
+def menu_option_3():
     list_task_3 = list_task[:]
     for i in range(3, len(list_task_3), 4):
         list_task_3[i] = "X"
@@ -31,7 +31,7 @@ def menu_3():
     print('------------------------------------------------')
 
 
-def menu_4():
+def menu_option_4():
     result = None
     mean_number = sum(list_task)/len(list_task)
     for i in list_task:
@@ -45,7 +45,7 @@ def menu_4():
     print('------------------------------------------------')
 
 
-def menu_5():
+def menu_option_5():
     start_number_menu = 1
     print('------------------------------------------------')
     while start_number_menu <= 9:
@@ -57,7 +57,6 @@ def menu_5():
 
 
 def main():
-    # status = True
     while True:
         print('1. найти min число в листе.')
         print('2. удалить все дубликаты в листе.')
@@ -72,15 +71,15 @@ def main():
             print('------------------------------------------------')
         else:
             if int(menu_number) == 1:
-                menu_1()
+                menu_option_1()
             elif int(menu_number) == 2:
-                menu_2()
+                menu_option_2()
             elif int(menu_number) == 3:
-                menu_3()
+                menu_option_3()
             elif int(menu_number) == 4:
-                menu_4()
+                menu_option_4()
             elif int(menu_number) == 5:
-                menu_5()
+                menu_option_5()
             elif int(menu_number) == 6:
                 break
             else:
