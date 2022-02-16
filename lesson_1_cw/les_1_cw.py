@@ -16,11 +16,12 @@ users_list = []
 
 
 def add_user():
-
     name = input('Введіть Ім\'я: ')
     age = input('Введіть вік: ')
-    status = int(input('Введіть статус: '))
-    users_list.append({'id': len(users_list), 'name': name, 'age': int(age), 'status': bool(status)})
+    status = input('Введіть статус: ')
+
+    users_list.append({'id': 0 if len(users_list) == 0 else users_list[-1]['id'] + 1, 'name': name, 'age': int(age),
+                       'status': True if status == 'True' else False})
 
     print('------------------------------------------------')
     print(f'Користувача {users_list[-1]} додадно')
@@ -28,7 +29,6 @@ def add_user():
 
 
 def get_all_users():
-
     print('------------------------------------------------')
     if len(users_list):
         for i in users_list:
@@ -39,7 +39,6 @@ def get_all_users():
 
 
 def get_by_age():
-
     sorted_users_by_age = sorted(users_list, key=lambda d: d['age'])
 
     print('------------------------------------------------')
@@ -48,11 +47,10 @@ def get_by_age():
 
 
 def delete_user_by_id():
-
     user_id = int(input('Введіть id: '))
 
     for i in users_list:
-        if user_id == int(i['id']):
+        if user_id == i['id']:
             users_list.remove(i)
             print('------------------------------------------------')
             print(f'Користувач {i} видалений.')
@@ -65,7 +63,6 @@ def delete_user_by_id():
 
 
 def change_status():
-
     user_id = int(input('Введіть id для зміни статусу: '))
 
     for i in users_list:
@@ -83,7 +80,6 @@ def change_status():
 
 
 def main():
-
     while True:
         print('1. Додати нового юзера.')
         print('2. Вивід всіх юзерів.')
@@ -94,29 +90,22 @@ def main():
 
         menu_number = input('Зробіть свій вибір:')
 
-        if not menu_number.isdigit() or 0 >= int(menu_number) > 6:
-
-            print('------------------------------------------------')
-            print('Wrong number!')
-            print('------------------------------------------------')
-
+        if menu_number == '1':
+            add_user()
+        elif menu_number == '2':
+            get_all_users()
+        elif menu_number == '3':
+            get_by_age()
+        elif menu_number == '4':
+            delete_user_by_id()
+        elif menu_number == '5':
+            change_status()
+        elif menu_number == '6':
+            break
         else:
-            if int(menu_number) == 1:
-                add_user()
-            elif int(menu_number) == 2:
-                get_all_users()
-            elif int(menu_number) == 3:
-                get_by_age()
-            elif int(menu_number) == 4:
-                delete_user_by_id()
-            elif int(menu_number) == 5:
-                change_status()
-            elif int(menu_number) == 6:
-                break
-            else:
-                print('------------------------------------------------')
-                print("Wrong number!")
-                print('------------------------------------------------')
+            print('------------------------------------------------')
+            print("Wrong number!")
+            print('------------------------------------------------')
 
 
 if __name__ == '__main__':
