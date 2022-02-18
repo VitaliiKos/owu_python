@@ -6,9 +6,10 @@
 запишите 5 тудушек
 и выведете все
 """
+from typing import Callable
 
 
-def notebook() -> ():
+def notebook() -> Callable:
     todo_list = []
 
     def add_todo(todo: str):
