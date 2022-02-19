@@ -1,10 +1,10 @@
-#########################################
-# 3. Знайти анаграму.
-#      Перевірити чи слово має в собі такі самі літери як і поеперднє слово.
-#    ANAGRAM | MGANRAA -> true
-#    EXIT | AXET -> false
-#    GOOD | DOGO -> true
-#########################################
+"""
+ 3. Знайти анаграму.
+    Перевірити чи слово має в собі такі самі літери як і поеперднє слово.
+    ANAGRAM | MGANRAA -> true
+    EXIT | AXET -> false
+    GOOD | DOGO -> true
+"""
 
 first_word = sorted(i for i in input('Insert fist word: '))
 second_word = sorted(i for i in input('Insert second word: '))
