@@ -6,13 +6,12 @@
 
 def return_text():
     current_number = (input('Insert number:'))
-    divisor = len(current_number) - 1
+    len_current_number = len(current_number) - 1
     result = []
 
-    for i in current_number:
-        result.append(i + (divisor * '0'))
-        divisor -= 1
-
+    for index, val in enumerate(current_number):
+        if int(val):
+            result.append(val + '0' * (len_current_number - index))
     return ' + '.join(result)
 
 
