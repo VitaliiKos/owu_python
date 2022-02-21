@@ -9,17 +9,13 @@
 insert_number = int(input('Введіть N: '))
 
 
-def fact_line_iter_proc(n):
-    return fact_iter(0, n)
-
-
-def fact_iter(counter, n):
+def fact_iter(n, counter=0):
     counter += n % 10
     n //= 10
-    if n == 0:
-        return counter
-    else:
-        return fact_iter(counter, n)
+
+    if n:
+        return fact_iter(n, counter)
+    return counter
 
 
-print(fact_line_iter_proc(insert_number))
+print(fact_iter(insert_number))
