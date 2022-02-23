@@ -1,4 +1,3 @@
-
 def new_dec():
     count = 0
 
@@ -7,13 +6,9 @@ def new_dec():
         def wrapper():
             nonlocal count
             count += 1
-
             print(a_func.__name__, count)
-
             a_func()
-
             print('---------------------------')
-
         return wrapper
     return my_decortion
 
